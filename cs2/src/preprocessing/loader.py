@@ -4,15 +4,14 @@ import os
 
 class Loader:
 
-    def __init__(self, num_processes=4):
-        self.num_processes = num_processes
+    def __init__(self):
+        pass
 
-    def load_files(self, file_paths):
+    def load_files(self, file_path):
         """
-        Maps set of python worker processes onto the list of CS2 file's sent and returns a list of dictionnary objects each repressenting a parsed game
+        Maps set of python worker processes onto the list of CS2 file's sent and returns a list of Demo objects each repressenting a parsed game
         """
-        with Pool(self.num_processes) as pool:
-            parsed_data = pool.map(self._parse_single_file, file_paths)
+        parsed_data = self._parse_single_file(file_path)
 
         return parsed_data
 
