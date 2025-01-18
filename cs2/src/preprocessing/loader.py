@@ -1,6 +1,4 @@
 from awpy import Demo
-from multiprocessing import Pool
-import os
 
 class Loader:
 
